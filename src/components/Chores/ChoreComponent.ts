@@ -1,4 +1,3 @@
-// ------- COMPONENT BASECLASS START --------------
 export abstract class ChoreComponent<
   T extends HTMLElement,
   U extends HTMLElement
@@ -40,5 +39,3 @@ export abstract class ChoreComponent<
   abstract addListeners(): void;
   abstract renderContent(): void;
 }
-
-// ------- COMPONENT BASECLASS END --------------

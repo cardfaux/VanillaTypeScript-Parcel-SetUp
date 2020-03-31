@@ -1,7 +1,7 @@
 import { ChoreComponent } from './ChoreComponent';
 import { choreState } from '../../State/ChoreState';
-import validateInputs from '../../validation/validation';
-import { ValidationLogic } from '../../validation/validation';
+import { validateInputs } from '../../validation/validation';
+import { ValidationLogic } from '../../interfaces/Validation';
 
 export class ChoreInput extends ChoreComponent<
   HTMLDivElement,

@@ -1689,7 +1689,6 @@ var _createClass2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpe
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// ------- COMPONENT BASECLASS START --------------
 var ChoreComponent = /*#__PURE__*/function () {
   function ChoreComponent(templateId, renderElementId, insertAtStart, newElementId) {
     (0, _classCallCheck2.default)(this, ChoreComponent);
@@ -1712,8 +1711,7 @@ var ChoreComponent = /*#__PURE__*/function () {
     }
   }]);
   return ChoreComponent;
-}(); // ------- COMPONENT BASECLASS END --------------
-
+}();
 
 exports.ChoreComponent = ChoreComponent;
 },{"@babel/runtime-corejs2/helpers/classCallCheck":"../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js","@babel/runtime-corejs2/helpers/createClass":"../node_modules/@babel/runtime-corejs2/helpers/createClass.js"}],"../src/components/Chores/ChoreItem.ts":[function(require,module,exports) {
@@ -2212,7 +2210,7 @@ module.exports = _slicedToArray;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = validateInputs;
+exports.validateInputs = validateInputs;
 
 function validateInputs(validateInput) {
   var isValid = true;
@@ -2259,7 +2257,7 @@ var _ChoreComponent2 = require("./ChoreComponent");
 
 var _ChoreState = require("../../State/ChoreState");
 
-var _validation = _interopRequireDefault(require("../../validation/validation"));
+var _validation = require("../../validation/validation");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2314,7 +2312,7 @@ var ChoreInput = /*#__PURE__*/function (_ChoreComponent) {
         maxLength: 50
       };
 
-      if (!(0, _validation.default)(childValidation) || !(0, _validation.default)(choreValidation) || !(0, _validation.default)(noteValidation)) {
+      if (!(0, _validation.validateInputs)(childValidation) || !(0, _validation.validateInputs)(choreValidation) || !(0, _validation.validateInputs)(noteValidation)) {
         alert('INVALID INPUTS(min. 5 Characters, max. 50 Characters....)');
         return;
       } else {
@@ -2360,16 +2358,11 @@ var _ChoreList = require("./components/Chores/ChoreList");
 
 var _ChoreInput = require("./components/Chores/ChoreInput");
 
-// -------------- CHORELIST CLASS EXTENDING FROM THE COMPONENT CLASS START -----------
-// -------------- CHORELIST CLASS EXTENDING FROM THE COMPONENT CLASS END -----------
-// ---------- CHOREINPUT CLASS EXTENDING FROM THE COMPONENT CLASS START --------
-// ---------- CHOREINPUT CLASS EXTENDING FROM THE COMPONENT CLASS END --------
-// ------- RENDERING THE COMPONENTS START -------------
 new _ChoreInput.ChoreInput();
 new _ChoreList.ChoreList('Wesleigh');
 new _ChoreList.ChoreList('Alexis');
 new _ChoreList.ChoreList('Tommy');
-new _ChoreList.ChoreList('Finished'); // ------- RENDERING THE COMPONENTS END -------------
+new _ChoreList.ChoreList('Finished');
 },{"./components/Chores/ChoreList":"../src/components/Chores/ChoreList.ts","./components/Chores/ChoreInput":"../src/components/Chores/ChoreInput.ts"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -2398,7 +2391,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43591" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41883" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

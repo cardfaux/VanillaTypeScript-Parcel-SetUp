@@ -1,11 +1,6 @@
-export interface ValidationLogic {
-  value: string;
-  required?: boolean;
-  minLength?: number;
-  maxLength?: number;
-}
+import { ValidationLogic } from '../interfaces/Validation';
 
-export default function validateInputs(validateInput: ValidationLogic) {
+export function validateInputs(validateInput: ValidationLogic) {
   let isValid = true;
   if (validateInput.required) {
     isValid = isValid && validateInput.value.trim().length !== 0;
